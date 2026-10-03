@@ -1,0 +1,10 @@
+{
+  "name": "bnb-ecosystem-updates",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.114"
+  }
+}

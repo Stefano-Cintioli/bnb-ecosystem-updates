@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "scope": "Sourced color metadata and project-specific composition parameters. Official artwork and fonts are local inputs, not distributed.",
+  "tokens": {
+    "BRAND_BG": {
+      "value": "#0B0E11",
+      "source": [
+        {
+          "source_file": "BNB_Chain_Logo_Black.svg",
+          "source_expression": "/svg/g[1]/path[1]/@fill",
+          "source_value": "#0B0E11"
+        },
+        {
+          "source_file": "BNB_Chain_Stacked_Logo_Black.svg",
+          "source_expression": "/svg/g[1]/path[1]/@fill",
+          "source_value": "#0B0E11"
+        }
+      ],
+      "usage": "Project background reusing an official SVG foreground fill; not an official SVG background token."
+    },
+    "BRAND_YELLOW": {
+      "value": "#F0B90B",
+      "source": [
+        {
+          "source_file": "BNB_Chain_Logo_Yellow.svg",
+          "source_expression": "/svg/path[1]/@fill",
+          "source_value": "#F0B90B"
+        },
+        {
+          "source_file": "BNB_Chain_Symbol_Yellow.svg",
+          "source_expression": "/svg/path[1]/@fill",
+          "source_value": "#F0B90B"
+        }
+      ]
+    },
+    "BRAND_WHITE": {
+      "value": "white",
+      "source": [
+        {
+          "source_file": "BNB_Chain_Symbol_White.svg",
+          "source_expression": "/svg/path[1]/@fill",
+          "source_value": "white"
+        },
+        {
+          "source_file": "BNB_Chain_Logo_White.svg",
+          "source_expression": "/svg/g[1]/g[1]/path[1]/@fill",
+          "source_value": "white"
+        }
+      ],
+      "normalized_srgb_hex": "#FFFFFF",
+      "normalization_expression": "CSS named color white maps to sRGB #FFFFFF; the source literal is white."
+    },
+    "LOGO_WORDMARK": {
+      "value": "assets/brand/logos/BNB_Chain_Logo_Yellow.svg",
+      "source_file": "BNB_Chain_Logo_Yellow.svg",
+      "source_expression": "/svg; original horizontal lockup containing nine artwork paths",
+      "usage": "Original complete official horizontal SVG required locally; artwork is not distributed."
+    }
+  },
+  "title_design_proposal": {
+    "family": "Inter",
+    "style": "SemiBold",
+    "weight": 600,
+    "font_metadata": {
+      "family": "Inter SemiBold",
+      "subfamily": "Regular",
+      "postscript_name": "Inter-SemiBold",
+      "version": "Version 4.001;git-9221beed3",
+      "weight": 600,
+      "units_per_em": 2048,
+      "cap_height_units": 1490
+    },
+    "usage": "Inter SemiBold is a project typography choice. No font was named in the official outlined SVGs."
+  },
+  "intro_design_proposal": {
+    "revision": "revision-03",
+    "logo": {
+      "token": "LOGO_WORDMARK",
+      "whole_original_svg": true,
+      "center": [
+        960,
+        450
+      ],
+      "height": 128,
+      "aspect_ratio": [
+        319,
+        56
+      ],
+      "width": 729.1428571428571
+    },
+    "title": {
+      "text": "Ecosystem Updates",
+      "center": [
+        960,
+        638
+      ],
+      "cap_height": 70,
+      "tracking_px": 0.5,
+      "color_token": "BRAND_YELLOW",
+      "proposal_ref": "title_design_proposal"
+    },
+    "timing": {
+      "logo_flicker_frames": [
+        30,
+        37
+      ],
+      "logo_settled_frame": 38,
+      "title_fade_settle_frames": [
+        42,
+        54
+      ],
+      "hold_through_frame": 120,
+      "exit_frames": [
+        120,
+        134
+      ]
+    },
+    "symbol_effect": {
+      "source_token": "LOGO_WORDMARK",
+      "source_selector": "/svg/path[1]",
+      "mask_method": "Original SVG DOM clone; retain first artwork path d/fill/viewBox; original complete lockup remains base",
+      "type": "one smooth localized yellow glow pulse",
+      "frames": [
+        38,
+        62
+      ],
+      "peak_frame": 50,
+      "easing": "sin(pi * normalized_progress)^2; zero at both endpoints",
+      "blur_px": 16,
+      "highlight": 0.12,
+      "halo": 0.75,
+      "color_token": "BRAND_YELLOW",
+      "region_method": "Browser SVG getBBox scaled at exact whole-lockup placement; pad three blur radii, cap right at midpoint before first wordmark path; explicit screen-space shader clip"
+    }
+  },
+  "outro_revision_02_proposal": {
+    "revision": "revision-02",
+    "duration_seconds": 3.0,
+    "frame_count": 90,
+    "fps": 30,
+    "logo": {
+      "token": "LOGO_WORDMARK",
+      "whole_original_svg": true,
+      "height": 128,
+      "center": [
+        960,
+        540
+      ],
+      "aspect_ratio": [
+        319,
+        56
+      ]
+    },
+    "background_token": "BRAND_BG",
+    "shutdown_endpoint_rgb": [
+      0,
+      0,
+      0
+    ],
+    "timing": {
+      "fade_in_frames": [
+        0,
+        8
+      ],
+      "symbol_pulse_frames": [
+        12,
+        36
+      ],
+      "symbol_pulse_peak_frame": 24,
+      "hold_through_frame": 47,
+      "vertical_squeeze_frames": [
+        48,
+        72
+      ],
+      "line_shrink_frames": [
+        68,
+        81
+      ],
+      "line_crossfade_frames": [
+        68,
+        77
+      ],
+      "point_fade_frames": [
+        79,
+        86
+      ],
+      "pure_black_frames": [
+        86,
+        89
+      ]
+    },
+    "symbol_effect": {
+      "source_token": "LOGO_WORDMARK",
+      "source_selector": "/svg/path[1]",
+      "mask_method": "Original SVG DOM clone; retain d/fill/viewBox and complete-lockup placement",
+      "easing": "sin(pi * normalized_progress)^2",
+      "blur_px": 16,
+      "highlight": 0.12,
+      "halo": 0.75,
+      "color_token": "BRAND_YELLOW",
+      "region_method": "Actual browser getBBox scaled at centered lockup placement; pad3 blur radii, clip at midpoint before first wordmark path"
+    },
+    "shutdown": {
+      "line_height_px": 3,
+      "point_width_px": 3,
+      "line_color_token": "BRAND_WHITE",
+      "background_dims_to_black": true,
+      "full_frame_flash": false,
+      "continuous_overlapping_phases": true,
+      "line_blur_px": 6,
+      "line_opacity": 0.55
+    },
+    "blurred_copy": {
+      "source_token": "LOGO_WORDMARK",
+      "whole_original_svg": true,
+      "blur_px": 24,
+      "opacity": 0.15,
+      "alignment": "exact crisp original-logo placement",
+      "provenance": "compositions/intro.js logoGlowImage blur24px and settled glow0.15; original pixels, not replacement artwork"
+    }
+  }
+}
